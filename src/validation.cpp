@@ -1,6 +1,6 @@
 #include "validation.h"
 
-bool checkSize(std::string card) {
+bool checkSize(std::string &card) {
     if(card.length() != 16) {
         
         std::cout << "Invalid length, should be 16 digits" << "\n";
@@ -10,7 +10,7 @@ bool checkSize(std::string card) {
     return true;
 }
 
-bool luhnValid(std::string card) {
+bool luhnValid(std::string &card) {
 
     int res = 0;
 
@@ -33,15 +33,14 @@ bool luhnValid(std::string card) {
         std::cout << "Fails to comply with Luhn algorithm" << std::endl;
         return false;
     }
-    
+
     return true;
 
 }
 
-bool isCardValid(std::string card) {
+bool isCardValid(std::string &card) {
 
     if(!checkSize(card)) {
-        std::cout << "fail" << std::endl;
         return false;
     }
 
@@ -53,4 +52,26 @@ bool isCardValid(std::string card) {
 
     return true;
 
+}
+
+std::string cardType(std::string &card) {
+
+    std::string type = "";
+
+    if(card[0] == '3')
+    {
+        type.append("American Express");
+    }
+
+    if(card[0] == '4')
+    {
+        type.append("Visa");
+    }
+
+    if(card[0] == '5')
+    {
+        type.append("Mastercard");
+    }
+
+    return type;
 }
