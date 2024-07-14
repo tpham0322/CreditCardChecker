@@ -3,7 +3,9 @@
 
 bool checkSize(std::string card);
 
-int isCardValid(std::string card);
+bool luhnValid(std::string card);
+
+bool isCardValid(std::string card);
 
 //bool isCardAmericanExpress() {};
 
