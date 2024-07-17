@@ -20,11 +20,13 @@ int main () {
     }
     else {
         std::cout << "Valid card number" << std::endl;
+
+        std::string typeofCard = cardType(cardNum);
+    
+        std::cout << "Your card issuer is: " << typeofCard << std::endl;
     }
 
-    std::string typeofCard = cardType(cardNum);
-
-    std::cout << "Your card is " << typeofCard << std::endl;
+    
 
     return 0;
     
